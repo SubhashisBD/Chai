@@ -58,4 +58,27 @@
 
 // 33. HOW TO CREATE NEW ELEMENT IN DOM
     
-    const  document.querySelector
+    const parent =  document.querySelectorAll('.parent')
+    console.log(parent);
+
+    // It will give html node
+    console.log(parent.children);
+
+    console.log(parent.firstElementChild);
+    console.log(parent.children[1].innerHTML);
+    
+    // CHecking the childNodes present in Parent , I will also include new line as a text node 
+    console.log("NODES: ", parent.childNodes);
+
+    const div = document.createElement('div')
+    div.className = "main"
+
+    // Compare which is better
+    div.innerText = "subh";
+    const addText = document.createTextNode("chai");
+    div.appendChild(addText); 
+
+    div.setAttribute("id", generated);
+    div.style.backgroundColor = "green";
+
+    document.body.appendChild(div);
