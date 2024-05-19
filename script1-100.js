@@ -66,14 +66,14 @@
 
     console.log(parent.firstElementChild);
     console.log(parent.children[1].innerHTML);
-    
-    // CHecking the childNodes present in Parent , I will also include new line as a text node 
+
+    // Checking the childNodes present in Parent , I will also include new line as a text node 
     console.log("NODES: ", parent.childNodes);
 
     const div = document.createElement('div')
     div.className = "main"
 
-    // Compare which is better
+    // Compare which is better optimize
     div.innerText = "subh";
     const addText = document.createTextNode("chai");
     div.appendChild(addText); 
@@ -81,4 +81,28 @@
     div.setAttribute("id", generated);
     div.style.backgroundColor = "green";
 
+    //Adding the Div to the body 
     document.body.appendChild(div);
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = '${langName}';
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("typescript");
+
+// 34.EDIT & REMOVE ELEMENTS
+
+    // EDIT
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    //secondLang.innerHTML = "Mojo";
+    // secondLang.outerHTML = '<li>TypeScript</li>'
+    const newLi = document.createElement('li');
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+
+    // REMOVE
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();
+
